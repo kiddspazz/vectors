@@ -1,4 +1,4 @@
-export class Vector2d {
+export default class Vector2d {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -42,14 +42,17 @@ export class Vector2d {
 
   normalize() {
     const length = this.magnitude();
-    return new Vector(this.x / length, this.y / length);
+    const { x, y } = this;
+    return new Vector(x / length, y / length);
   }
 
   subtract(v) {
-    return new Vector(this.x - v.x, this.y - v.y);
+    const { x, y } = this;
+    return new Vector(x - v.x, y - v.y);
   }
 
   indexFromVector(w) {
-    return this.x + this.y * w;
+    const { x, y } = this;
+    return x + y * w;
   }
 }
