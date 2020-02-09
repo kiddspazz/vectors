@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "vector modules",
+  "main": "vectors.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiddspazz/vectors.git"
+  },
+  "keywords": [
+    "vectors"
+  ],
+  "author": "kiddspazz (https://www.travish.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiddspazz/vectors/issues"
+  },
+  "homepage": "https://github.com/kiddspazz/vectors#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}
