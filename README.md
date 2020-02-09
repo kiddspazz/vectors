@@ -5,23 +5,12 @@ A vector class with the following utilities:
 ## Internal vars
 this.x (float) and this.y (float)
 
-## Prototype methods
-### magnitude
-  returns float
-
-### normalize
-  returns normalized Vector
-
-### subtract
-  takes (Vector)  
-  returns Vector
-
 ## Static methods
 ### dotProduct
   takes (Vector, Vector)  
   returns float
 
-### indexFromVector
+### vectorFromIndex
   takes (index, width)  
   returns vector
 
@@ -33,3 +22,17 @@ this.x (float) and this.y (float)
   takes (goalV, dotProducts)  
   returns a linearInterpolation (float)
 
+## Prototype methods
+### magnitude
+  returns float
+
+### normalize
+  returns normalized Vector
+
+### subtract
+  takes (Vector)  
+  returns Vector
+
+### indexFromVector
+  takes (width)
+  returns float

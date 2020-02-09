@@ -1,28 +1,11 @@
-export default class Vector {
+export class Vector2d {
   constructor(x, y) {
     this.x = x;
     this.y = y;
   }
 
-  magnitude() {
-    return Math.sqrt(this.x ** 2 + this.y ** 2);
-  }
-
-  normalize() {
-    const length = this.magnitude();
-    return new Vector(this.x / length, this.y / length);
-  }
-
-  subtract(v) {
-    return new Vector(this.x - v.x, this.y - v.y);
-  }
-
   static dotProduct(v1, v2) {
     return (v1.x * v2.x + v1.y * v2.y);
-  }
-
-  static indexFromVector(v, w) {
-    return v.x + v.y * w;
   }
 
   static vectorFromIndex(i, w) {
@@ -51,5 +34,22 @@ export default class Vector {
     const ABCD = Vector.linearInterpolation(goalV.y, v5, v6);
 
     return ABCD;
+  }
+  
+  magnitude() {
+    return Math.sqrt(this.x ** 2 + this.y ** 2);
+  }
+
+  normalize() {
+    const length = this.magnitude();
+    return new Vector(this.x / length, this.y / length);
+  }
+
+  subtract(v) {
+    return new Vector(this.x - v.x, this.y - v.y);
+  }
+
+  indexFromVector(w) {
+    return this.x + this.y * w;
   }
 }
