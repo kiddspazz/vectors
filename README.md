@@ -12,7 +12,7 @@ this.x and this.y
 ### normalize
   returns normalized Vector
 
-##subtract
+## subtract
   takes (Vector)
   returns Vector
 
