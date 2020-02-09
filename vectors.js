@@ -1,16 +1,16 @@
 export default class Vector {
   constructor(x, y) {
-    this.x = x
-    this.y = y
+    this.x = x;
+    this.y = y;
   }
 
   magnitude() {
-    return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+    return Math.sqrt(this.x ** 2 + this.y ** 2);
   }
 
   normalize() {
-    let length = this.magnitude();
-    return new Vector(this.x/length, this.y/length);
+    const length = this.magnitude();
+    return new Vector(this.x / length, this.y / length);
   }
 
   subtract(v) {
@@ -26,23 +26,30 @@ export default class Vector {
   }
 
   static vectorFromIndex(i, w) {
-    return new Vector(i%w, Math.floor(i/w));
+    return new Vector(i % w, Math.floor(i / w));
   }
 
   static linearInterpolation(known, v1, v2) {
-    let denominator = v2.x - v1.x;
-    let numerator1 = v1.y * (v2.x - known);
-    let numerator2 = v2.y * (known - v1.x);
+    const denominator = v2.x - v1.x;
+    const numerator1 = v1.y * (v2.x - known);
+    const numerator2 = v2.y * (known - v1.x);
 
-    return (numerator1 + numerator2)/denominator;
+    return (numerator1 + numerator2) / denominator;
   }
 
   static bilinearInterpolation(goalV, dotProducts) {
-    let AB = linearInterpolation(goalV.x, new Vector(0, dotProducts[0]), new Vector(1, dotProducts[1]));
-    let CD = linearInterpolation(goalV.x, new Vector(0, dotProducts[2]), new Vector(1, dotProducts[3]));
+    const v1 = new Vector(0, dotProducts[0]);
+    const v2 = new Vector(1, dotProducts[1]);
+    const v3 = new Vector(0, dotProducts[2]);
+    const v4 = new Vector(1, dotProducts[3]);
 
-    let ABCD = linearInterpolation(goalV.y, new Vector(0, AB), new Vector(1, CD));
+    const AB = Vector.linearInterpolation(goalV.x, v1, v2);
+    const CD = Vector.linearInterpolation(goalV.x, v3, v4);
+
+    const v5 = new Vector(0, AB);
+    const v6 = new Vector(1, CD);
+    const ABCD = Vector.linearInterpolation(goalV.y, v5, v6);
 
     return ABCD;
   }
-};
+}
