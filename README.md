@@ -3,7 +3,7 @@
 A vector class with the following utilities:
 
 ## Internal vars
-this.x and this.y
+this.x (float) and this.y (float)
 
 ## Prototype methods
 ### magnitude
