@@ -13,23 +13,23 @@ this.x and this.y
   returns normalized Vector
 
 ### subtract
-  takes (Vector)
+  takes (Vector)  
   returns Vector
 
 ## Static methods
 ### dotProduct
-  takes (Vector, Vector)
+  takes (Vector, Vector)  
   returns float
 
 ### indexFromVector
-  takes (index, width)
+  takes (index, width)  
   returns vector
 
 ### linearInterpolation
-  takes (known, v1, v2)
+  takes (known, v1, v2)  
   returns float
 
 ### bilinearInterpolation
-  takes (goalV, dotProducts)
+  takes (goalV, dotProducts)  
   returns a linearInterpolation (float)
 
